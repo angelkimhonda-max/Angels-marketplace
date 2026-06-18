@@ -347,6 +347,37 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.enter-product-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.75rem 1.8rem;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  animation: fadeUp 1.2s 0.3s cubic-bezier(0.16,1,0.3,1) both;
+}
+.enter-product-btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+.enter-product-btn svg {
+  width: 10px; height: 10px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  transition: transform 0.3s;
+}
+.enter-product-btn:hover svg { transform: translateX(3px); }
+
 @media (max-width: 1100px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -369,6 +400,10 @@ footer {
   </div>
   <div class="wordmark">Ma<em>i</em>son</div>
   <div class="tagline">Objects of Enduring Refinement</div>
+  <a href="add-product.html" class="enter-product-btn">
+    <svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+    Enter Product
+  </a>
   <div class="header-border"></div>
 </header>
 
@@ -409,7 +444,7 @@ footer {
 </footer>
 
 <script>
-const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSD8U0P_BSPLIbkIVgfwmqdp9_b-lVvN4117Fzs311AytF_IjRJDvGjkoSUqMqUKgWciTNuF9RUi3P6/pub?output=csv';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQmsHXAkOy_pqkxEahl_wmuGir-rAErmjwjeem8krUzykeG7No0YOyzMFB56JrpGA/pub?output=csv';
 
 function parseCSV(text) {
   const lines = text.trim().split('\n');
